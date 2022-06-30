@@ -3,8 +3,8 @@ services:
  - docker
 
 before_install:
- - docker build -t karthik12gowda/docker-reacct -f Dockerfile.dev .
+ - docker build -t karthik12gowda/docker-react -f Dockerfile.dev .
 
 script:
- - docker run karthik12gowda/docker-reacct npm run test -- --coverage
+ - docker run -e CI=true karthik12gowda/docker-react npm run test -- --coverage
   
